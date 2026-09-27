@@ -16,7 +16,11 @@ dotenv.config();
 const app = express();
 
 // ==================== MIDDLEWARE ====================
-app.use(cors());
+app.use(
+  cors({
+    maxAge: 86400,
+  }),
+);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
